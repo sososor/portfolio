@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+    /* スムーススクロール */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* 背景 */
+    .fixed-background {
+      min-height: 100vh;
+      width: 100%;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .background-1 {
+      background-image: url('neko.jpg');
+    }
+
+    .background-2 {
+      background-image: url('ramen.jpg');
+    }
+
+    .extra-space {
+      height: 300px; /* 必要な高さに調整 */
+    }
+
+    /* コンテナ */
+    .container {
+      background-color: #ffffff;
+      padding: 5rem 2rem; /* パディングを調整 */
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .about, .skills, .created {
+      background: #ffffff;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 4rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .about h2, .skills h2, .created h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .about img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+      margin-bottom: 2rem;
+    }
+
+    .about .name h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .skills p, .created p {
+      font-size: 1.25rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .created .name {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .created a {
+      font-size: 1.25rem;
+      color: #1d4ed8;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .created a:hover {
+      color: #2563eb;
+    }
+
+    /* メディアクエリ */
+    @media screen and (max-width: 764px) {
+      .about img {
+        margin-bottom: 1rem;
+      }
+
+      .about .name h3 {
+        font-size: 1.25rem;
+      }
+
+      .skills p, .created p {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        font-size: 1.125rem;
+      }
+    }
+
+    /* ヘッダー */
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .fixed-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #fff;
+      border-bottom: 2px solid #e0e0e0;
+      z-index: 1000;
+    }
+
+    .header-container {
+      padding: 20px 30px;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 36px;
+      font-weight: bold;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .portfolio-link {
+      font-size: 50px;
+      font-weight: bold;
+      color: #007bff;
+      text-decoration: none;
+      position: relative;
+      top: -10px;
+      text-align: center;        /* テキストを中央揃え */
+      left: 4%;                /* 親要素の横中央 */
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-link {
+      font-size: 16px;
+      font-weight: 500;
+      color: #007bff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover {
+      color: #333;
+    }
+
+    /* フッター */
+    .footer {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .footer p {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+    h4 {
+    font-size: 25px;     /* フォントサイズ */
+    color: #000000;      /* 真っ黒 */
+    font-family: 'Roboto', sans-serif;  /* Google Fonts からRobotoを使用 */
+}
+
+
+
+
+
+  </style>
+</head>
+<body class="font-roboto">
+
+  <!-- Header -->
+  <header class="fixed-header">
+    <div class="header-container">
+      <div class="header-content">
+        <a href="#portfolio" class="logo">S</a>
+        <a href="#portfolio" class="portfolio-link">Portfolio</a>
+        <nav class="nav-links">
+          <a href="#about-section" class="nav-link">About</a>
+          <a href="#skills-section" class="nav-link">Skills</a>
+          <a href="#created-section" class="nav-link">Created</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section id="portfolio"></section>
+
+    <section class="fixed-background background-1"></section>
+
+    <section class="container" id="about-section">
+      <section class="about">
+        <h2>About me</h2>
+        <div class="name">
+          <h3>2341047</h3>
+        </div>
+        <p>学科： 社会メディア (２年)</p>
+        <p>所属サークル： デジタルコンテンツ研究会</p>
+      </section>
+    </section>
+
+    <section class="container" id="skills-section">
+      <section class="skills">
+        <h2>Skills</h2>
+        <h4>資格</h4>
+        <br>
+        <p>・ITパスポート</p>
+        <p>・基本情報</p>
+        <br><br>
+        <h4>できること</h4>
+        <br>
+        <p>・Unity 2Dゲーム制作</p>
+        <p>・Blender（比較的簡単なものに限る）</p>
+        <p>・YMM4 動画制作（ずんだもん・棒読みちゃん）</p>
+        <p>・バドミントン</p>
+        <p>・プログラミング（簡単なツールに限る）</p>
+      </section>
+    </section>
+
+    <section class="container" id="created-section">
+      <section class="created">
+        <h2>Created</h2>
+
+        <h4>＜2D RUN SHOOTING＞</h4>
+        <a href="https://unityroom.com/games/2drunshooting_sss#google_vignette" target="_blank" rel="noopener noreferrer">
+          https://unityroom.com/games/2drunshooting_sss#google_vignette
+        </a>
+        <p>Unityを使用し、2Dゲームを作りました。</p>
+        <br>
+        <h4>＜だんごむしRTA＞</h4>
+        <a href="https://unityroom.com/games/dangomusirta" target="_blank" rel="noopener noreferrer">
+          https://unityroom.com/games/dangomusirta
+        </a>
+        <p>Unityを使用し、都市大ハッカソンで友達と2Dゲームを作りました。</p>
+        <br>
+        <h4>＜Liminal Space＞</h4>
+        <img src="pool.png" alt="プロジェクト画像" width="800" height="500">
+        <p>Blenderを使用し、Liminal Spaceを作りました。</p>
+        <br>
+        <h4>＜2025 Happy New Year 抱負と目標を書こう！＞</h4>
+        <a href="https://hny-production.up.railway.app/" target="_blank" rel="noopener noreferrer">
+          https://hny-production.up.railway.app/
+        </a>
+        <p>Go, Gin, HTML, Railway, PostgreSQLを使って作りました。</p>
+      </section>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 2341047 Website.</p>
+  </footer>
+
+</body>
+</html>
