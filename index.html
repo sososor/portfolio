@@ -14,20 +14,25 @@
       scroll-behavior: smooth;
     }
 
-    /* 背景 */
-    .fixed-background {
-      min-height: 100vh;
-      width: 100%;
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .background-1 {
-  background-image: url('neko.jpg');
-  background-size: cover; /* 画像を画面サイズに合わせて縮小・拡大 */
+   /* 背景 */
+.fixed-background {
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover; /* 画面サイズに合わせて縮小・拡大 */
   background-position: center; /* 画像の中央を表示 */
-  background-attachment: fixed; /* 背景がスクロールしないようにする */
+  background-attachment: fixed; /* デスクトップでは背景がスクロールしないように */
+}
+
+/* 背景画像 */
+.background-1 {
+  background-image: url('neko.jpg');
+}
+
+/* スマホなどの画面サイズで背景固定を解除 */
+@media screen and (max-width: 768px) {
+  .fixed-background {
+    background-attachment: scroll; /* スマホでは背景をスクロールさせる */
+  }
 }
 
 
