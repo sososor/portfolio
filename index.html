@@ -103,8 +103,10 @@
     }
 
     /* メディアクエリ */
-    @media screen and (max-width: 764px) {
+    @media screen and (max-width: 1024px) {
       .about img {
+        width: 150px;
+        height: 150px;
         margin-bottom: 1rem;
       }
 
@@ -113,9 +115,50 @@
       }
 
       .skills p, .created p {
+        font-size: 1.125rem;
         margin-left: 1rem;
         margin-right: 1rem;
-        font-size: 1.125rem;
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      /* スマホ用調整 */
+      .header-container {
+        padding: 15px 20px;
+      }
+
+      .logo {
+        font-size: 28px;
+      }
+
+      .portfolio-link {
+        font-size: 30px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-link {
+        font-size: 14px;
+      }
+
+      .container {
+        padding: 3rem 1rem;
+      }
+
+      .about img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .skills p, .created p {
+        font-size: 1rem;
+      }
+
+      .about .name h3 {
+        font-size: 1rem;
       }
     }
 
@@ -158,8 +201,8 @@
       text-decoration: none;
       position: relative;
       top: -10px;
-      text-align: center;        /* テキストを中央揃え */
-      left: 4%;                /* 親要素の横中央 */
+      text-align: center;
+      left: 4%;
     }
 
     .nav-links {
@@ -192,15 +235,12 @@
       margin: 0;
       font-size: 1.1rem;
     }
+
     h4 {
-    font-size: 25px;     /* フォントサイズ */
-    color: #000000;      /* 真っ黒 */
-    font-family: 'Roboto', sans-serif;  /* Google Fonts からRobotoを使用 */
-}
-
-
-
-
+      font-size: 25px;
+      color: #000000;
+      font-family: 'Roboto', sans-serif;
+    }
 
   </style>
 </head>
